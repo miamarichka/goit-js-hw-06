@@ -1,5 +1,4 @@
 // Напиши скрипт, который для каждого элемента массива ingredients:
-
 // Создаст отдельный элемент <li>. Обзательно используй метод document.createElement().
 // Добавит название ингредиента как его текстовое содержимое.
 // Добавит элементу класс item.
@@ -15,6 +14,7 @@ const ingredients = [
   'Condiments',
 ];
 
+let ingredientItems = []
 
 for(let ingredient of ingredients){
 
@@ -22,6 +22,6 @@ const ingredientItem = document.createElement('li');
 ingredientItem.classList.add('item');
 ingredientItem.textContent=ingredient;
 
-document.querySelector('#ingredients').appendChild(ingredientItem);
+ingredientItems.push(ingredientItem);
 }
-
+document.querySelector('#ingredients').append(...ingredientItems);
